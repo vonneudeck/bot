@@ -30,7 +30,7 @@ default: bot-daemon
 all: static test bot-daemon bot-client
 
 bot-daemon bot-client:
-	go build -tags "$(GOTAGS)" -ldflags "-X main.buildversion=$(VERSION)" $(BUILDFLAGS) cmd/$@
+	go build -tags "$(GOTAGS)" -ldflags "-X main.buildversion=$(VERSION)" $(BUILDFLAGS) ./cmd/$@
 
 install: bot-client
 	install bot-client $(HOME)/.local/bin/bot-client
