@@ -8,7 +8,6 @@ jobs:
 
     steps:
     - checkout
-    - run: sed -i -e 's/multimfi/vonneudeck/g' Makefile
     - run: make
     - run: file bot-daemon
     - persist_to_workspace:
