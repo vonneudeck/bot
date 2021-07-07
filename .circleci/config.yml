@@ -8,6 +8,7 @@ jobs:
 
     steps:
     - checkout
+    - run: sed -i -e 's/multimfi/vonneudeck/g' cmd/*/*.go
     - run: make
     - run: file bot-daemon
     - persist_to_workspace:
@@ -55,4 +56,3 @@ workflows:
             only: /^v.*/
           branches:
             ignore: /.*/
-
